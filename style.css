@@ -1,0 +1,137 @@
+/* إعدادات عامة */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #001f3f; /* اللون الداكن */
+    color: #ffffff; /* لون النص */
+    line-height: 1.6;
+}
+
+/* تصميم الشريط العلوي */
+header {
+    background-color: #001f3f; /* لون الشريط العلوي */
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* صفحة اختيار اللغة */
+.language-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #001f3f; /* اللون الداكن */
+    color: #fff;
+}
+
+.language-selection h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.lang-button {
+    background-color: rgba(0, 123, 255, 0.8); /* لون الأزرار بخلفية شفافة */
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    margin: 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* إضافة تأثير التحويل */
+    width: 200px; /* تحديد عرض الزر لجعلها بنفس الحجم */
+}
+
+.lang-button:hover {
+    background-color: rgba(0, 86, 179, 0.8); /* لون الزر عند التحويم */
+    transform: scale(1.05); /* تأثير التكبير عند التحويم */
+}
+
+/* إعدادات الأقسام */
+section {
+    padding: 20px;
+    margin: 20px auto;
+    background-color: rgba(248, 248, 248, 0.9); /* لون خلفية أقسام بتدرج شفاف */
+    border-radius: 8px;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* محاذاة النص في القسم إلى الوسط */
+}
+
+/* إعدادات العناوين في الأقسام */
+section h2 {
+    margin-bottom: 15px;
+    color: #001f3f; /* لون العناوين */
+    font-size: 1.6em;
+}
+
+/* إعدادات النصوص */
+section p, section ul {
+    font-size: 1em;
+    color: #000000; /* لون النص داخل الأقسام */
+    text-align: center; /* محاذاة النص للوسط */
+}
+
+/* إعدادات الشهادات */
+.certificate {
+    margin: 15px 0;
+    padding: 15px;
+    background: #f8f8f8; /* لون خلفية الشهادات */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.certificate:hover {
+    transform: scale(1.02);
+}
+
+/* إعدادات iframe لعرض PDF */
+iframe {
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%; /* عرض كامل */
+    height: 500px; /* ارتفاع ثابت */
+}
+
+/* إعدادات الفوتر */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #001f3f; /* لون الخلفية */
+    color: #ffffff; /* لون النص */
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.linkedin-icon, .whatsapp-icon {
+    color: #0e76a8;
+    font-size: 1.5em; /* زيادة حجم الأيقونة */
+    text-decoration: none;
+    margin: 0 10px; /* تباعد بين الأيقونات */
+    transition: color 0.3s ease;
+}
+
+.linkedin-icon:hover, .whatsapp-icon:hover {
+    color: #0077b5; /* لون الايقونة عند التحويم */
+    transform: scale(1.1); /* تكبير الأيقونة عند التحويم */
+}
+
+/* تخصيصات إضافية */
+button, a {
+    outline: none;
+}
+
+button:focus, a:focus {
+    outline: 2px solid #0056b3; /* لون التركيز */
+}

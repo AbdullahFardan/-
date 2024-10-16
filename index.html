@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المهندس عبدالله محمد فردان | مهندس شبكات</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* إضافة تأثيرات ديناميكية */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* إعدادات الجسم */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #001f3f; /* اللون الداكن */
+            color: rgb(0, 0, 0); /* لون النص */
+            overflow-x: hidden; /* منع التمرير الأفقي */
+        }
+
+        /* تصميم الشريط العلوي */
+        header {
+            background-color: #001f3f; /* لون الشريط العلوي */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            animation: fadeIn 1s; /* تأثير الدخول */
+        }
+
+        /* صفحة اختيار اللغة */
+        .language-selection {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #001f3f; /* اللون الداكن */
+            color: #fff;
+            animation: fadeIn 1s; /* تأثير الدخول */
+        }
+
+        .language-selection h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .lang-button {
+            background-color: rgba(0, 123, 255, 0.8); /* لون الأزرار بخلفية شفافة */
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            margin: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease; /* إضافة تأثير التحويل */
+            width: 200px; /* تحديد عرض الزر لجعلها بنفس الحجم */
+        }
+
+        .lang-button:hover {
+            background-color: rgba(0, 86, 179, 0.8); /* لون الزر عند التحويم */
+            transform: scale(1.05); /* تأثير التكبير عند التحويم */
+        }
+
+        /* إعدادات الأقسام */
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            background-color: rgba(248, 248, 248, 0.9); /* لون خلفية أقسام بتدرج شفاف */
+            border-radius: 8px;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center; /* محاذاة النص في القسم إلى الوسط */
+            animation: fadeIn 1s; /* تأثير الدخول */
+        }
+
+        /* إعدادات العناوين في الأقسام */
+        section h2 {
+            margin-bottom: 15px;
+            color: #001f3f; /* لون العناوين */
+            font-size: 1.6em;
+        }
+
+        section p, section ul {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #000000; /* لون النص داخل الأقسام */
+            text-align: center; /* محاذاة النص للوسط */
+        }
+
+        /* إعدادات الشهادات */
+        .certificate {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f8f8; /* لون خلفية الشهادات */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .certificate:hover {
+            transform: scale(1.02);
+        }
+
+        /* إعدادات iframe لعرض PDF */
+        iframe {
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            width: 100%; /* عرض كامل */
+            height: 500px; /* ارتفاع ثابت */
+        }
+
+        /* إعدادات الفوتر */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #001f3f; /* لون الخلفية */
+            color: #ffffff; /* لون النص */
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        .linkedin-icon, .whatsapp-icon {
+            color: #0e76a8;
+            font-size: 1.5em; /* حجم الأيقونة */
+            text-decoration: none;
+            margin: 0 10px; /* تباعد بين الأيقونات */
+            transition: color 0.3s ease;
+        }
+
+        .linkedin-icon:hover, .whatsapp-icon:hover {
+            color: #0077b5; /* لون الايقونة عند التحويم */
+        }
+
+        /* تخصيصات إضافية */
+        button, a {
+            outline: none;
+        }
+
+        button:focus, a:focus {
+            outline: 2px solid #0056b3; /* لون التركيز */
+        }
+    </style>
+</head>
+<body>
+
+<!-- صفحة اختيار اللغة -->
+<div id="language-selection" class="language-selection">
+    <h2>اختر لغتك / Choose Your Language</h2>
+    <button class="lang-button" onclick="setLanguage('ar')">العربية</button>
+    <button class="lang-button" onclick="setLanguage('en')">English</button>
+</div>
+
+<!-- المحتوى الرئيسي بالعربية -->
+<div id="content-ar" class="content" style="display:none;">
+    <header>
+        <h1>المهندس عبدالله محمد فردان | مهندس شبكات</h1>
+        <nav id="language-switcher" style="float: left; margin-left: 20px;">
+            <button class="lang-button" onclick="setLanguage('en')">English</button>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>نبذة عني</h2>
+        <p>المهندس عبدالله محمد فردان | مهندس شبكات</p>
+        <p>مهندس شبكات حديث تخرج وامتلك خبره أكاديمية وعملية واسعة في مجال تقنية المعلومات والشبكات حائز على شهادتي الدبلوم والبكالوريوس من الكلية التقنية بالدمام بمرتبة الشرف الأولى، مما يعكس تميزي الأكاديمي والتزامي بالتفوق. تميزت باستخدام أدوات محاكاة الشبكات مثل جي ان اس ثري و باكت ريسر ومحاكاة البيئة الافتراضية (ايف)، لتنفيذ مشاريع تقنية متطورة. أتممت الدورات بدرجات متقدمة، وحصلت على ثلاث خطابات شكر من الرئيس التنفيذي لموقع سيسكو، تقديرًا لأدائي المتميز أسعى للانضمام إلى فريق عمل يقدر الجودة والتميز، حيث أستطيع استثمار مهاراتي وخبراتي فيها أعمل حاليًا على تحسين لغتي الإنجليزية للمساهمه والنمو في المجال المهني</p>
+    </section>
+
+    <section id="education">
+        <h2>المؤهلات العلمية</h2>
+        <div class="certificate">
+            <h3>بكالورويس في تخصص دعم انظمة الشبكات</h3>
+            <iframe src="https://drive.google.com/file/d/1DMO9enD2jT81HSwtNURggw7vWCjEPQyp/preview"></iframe>
+        </div>
+        <p>4.86 - أعلى معدل على مستوى التخصص بمرتبة الشرف الأولى</p>
+
+        <div class="certificate">
+            <h3>دبلوم في تخصص تقنية الشبكات</h3>
+            <p>4.87 - أعلى معدل على مستوى التخصص بمرتبة الشرف الأولى</p>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <h2>الشهادات والدورات</h2>
+        <div class="certificate">
+            <h3>CCNA® Routing and Switching مقدمة الى الشبكات</h3>
+            <iframe src="https://drive.google.com/file/d/1AJQbq2zmLDBkKsaOcMV7Ztftr7cBMKVk/preview"></iframe>
+        </div>
+
+        <div class="certificate">
+            <h3>CCNA2® Routing and Switching توصيل الشبكات</h3>
+            <iframe src="https://drive.google.com/file/d/1SgGELbBsP3ChkNrpSx_4wLJRCWOrDxQ9/preview"></iframe>
+        </div>
+
+        <div class="certificate">
+            <h3>CCNA3® Routing and Switching اساسيات التوجيه والتحويل</h3>
+            <iframe src="https://drive.google.com/file/d/1XzIZCokLHu_YdmhjnrptyCUrhrHAINxP/preview"></iframe>
+        </div>
+
+        <div class="certificate">
+            <h3>CCNA4® Routing and Switching الشبكات القابلة للتوسعة</h3>
+            <iframe src="https://drive.google.com/file/d/1-qNE6kxMpzj8q9W-ga-H2jtsJl4NYonE/preview"></iframe>
+        </div>
+
+        <div class="certificate">
+            <h3> امن الشبكات </h3>
+            <iframe src="https://drive.google.com/file/d/1TToS0A--4G0ENUECEYtNE_299kGKgHEZ/preview"></iframe>
+        </div>
+
+        <div class="certificate">
+            <h3>ريادة الأعمال</h3>
+            <iframe src="https://drive.google.com/file/d/1TLQsB7bu_a4c69BGyTz2q6d13ZNmk21f/preview"></iframe>
+        </div>
+
+        <div class="certificate">
+            <h3>مقدمة في الأمن السيبراني</h3>
+            <iframe src="https://drive.google.com/file/d/1dSNtdx3MWkv48QHTrb4Bn77cy8-54OoF/preview"></iframe>
+        </div>
+
+        <div class="certificate">
+            <h3>مقدمة في إنترنت الأشياء</h3>
+            <iframe src="https://drive.google.com/file/d/1qkdrBo7ug9bT0MQw50g6_SbYOBJREIxR/preview"></iframe>
+        </div>
+
+        <div class="certificate">
+            <h3>أساسيات تكنولوجيا المعلومات عتاد وبرمجيات الكمبيوتر</h3>
+            <iframe src="https://drive.google.com/file/d/1X6pVM9_DVR07XKyQe99aN0g-AnJ37xES/preview"></iframe>
+        </div>
+
+        <div class="certificate">
+            <h3>أول خطاب شكر من الرئيس التنفيذي لشركة سيسكو تقديرًا للإنجازات الاستثنائية في دورة أساسيات تكنولوجيا المعلومات</h3>
+            <iframe src="https://drive.google.com/file/d/1ffMkZSxks4F4s8-yR5C0OwYnrUU2L7DR/preview"></iframe>
+        </div>
+
+        <div class="certificate">
+            <h3>ثاني خطاب شكر من الرئيس التنفيذي لشركة سيسكو تقديرًا للإنجازات الاستثنائية في دورة أمن الشبكات</h3>
+            <iframe src="https://drive.google.com/file/d/1TJ20MAQgL0ENAvebwY3HgL1n_oRbU1Vb/preview"></iframe>
+        </div>
+
+        <div class="certificate">
+            <h3>ثالث خطاب شكر من الرئيس التنفيذي لشركة سيسكو تقديرًا للإنجازات الاستثنائية في دورة التوجيه والتبديل</h3>
+            <iframe src="https://drive.google.com/file/d/1oTz2bq16MQ5Jt5bYEnsJliqHFsG1vwR-/preview"></iframe>
+        </div>
+
+        <!-- إضافة قسم العضوية -->
+        <div class="certificate">
+            <h3>عضوية الهيئة السعودية للمهندسين</h3>
+            <p>فئة العضوية: مهندس تقني</p>
+            <p>التخصص: تقنية هندسة الشبكات</p>
+            <p>رقم العضوية: 975819</p>
+            <iframe src="https://drive.google.com/file/d/1MZxugEcyvKftyLMoOUBHQokA4tnyWJzp/preview"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p> صنع بواسطة المهندس عبدالله محمد فردان</p>
+        <a href="https://www.linkedin.com/in/abdullahfardan" target="_blank" class="linkedin-icon">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://api.whatsapp.com/send/?phone=966558805075&text&type=phone_number&app_absent=0" target="_blank" class="whatsapp-icon">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+    </footer>
+</div>
+
+<!-- المحتوى الرئيسي بالإنجليزية -->
+<div id="content-en" class="content" style="display:none;">
+    <header>
+        <h1>Engineer Abdullah Mohammed Fardan | Network Engineer</h1>
+        <nav id="language-switcher" style="float: left; margin-left: 20px;">
+            <button class="lang-button" onclick="setLanguage('ar')">العربية</button>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Abdullah Mohammed Fardan | Network engineer. As a recent graduate holding both a Diploma in Computer Network Technology and a Bachelor’s degree in Network Systems Support from the Technical College in Dammam, I have achieved first-class honors and maintained the highest GPA in my field. This academic excellence reflects my dedication to mastering the complexities of IT networking, supported by extensive, hands-on experience with advanced network simulators such as GNS3, Packet Tracer, and Emulated Virtual Environment. These platforms have allowed me to design and execute large-scale, intricate projects that demonstrate both technical expertise and innovative thinking.</p>
+    </section>
+
+    <section id="education">
+        <h2>Academic Qualifications</h2>
+        <p><strong>Bachelor’s Degree in Network Systems Support</strong> - Technical College in Dammam</p>
+        <p>GPA: 4.86 - Highest GPA in the major with First-Class Honors</p>
+        <iframe src="https://drive.google.com/file/d/1DMO9enD2jT81HSwtNURggw7vWCjEPQyp/preview"></iframe>
+
+        <p><strong>Diploma in Computer Network Technology</strong> - Technical College in Dammam</p>
+        <p>GPA: 4.87 - Highest GPA in the major with First-Class Honors</p>
+    </section>
+
+    <section id="certifications">
+        <h2>Certificates and Courses</h2>
+
+        <div class="certificate">
+            <h3>CCNA® Routing and Switching Networks Introduction</h3>
+            <iframe src="https://drive.google.com/file/d/1AJQbq2zmLDBkKsaOcMV7Ztftr7cBMKVk/preview"></iframe>
+        </div>
+
+        <div class="certificate">
+            <h3>CCNA2® Routing and Switching Networking</h3>
+            <iframe src="https://drive.google.com/file/d/1SgGELbBsP3ChkNrpSx_4wLJRCWOrDxQ9/preview"></iframe>
+        </div>
+
+        <div class="certificate">
+            <h3>CCNA3® Routing and Switching</h3>
+            <iframe src="https://drive.google.com/file/d/1XzIZCokLHu_YdmhjnrptyCUrhrHAINxP/preview"></iframe>
+        </div>
+
+        <div class="certificate">
+            <h3>CCNA4® Routing and Switching</h3>
+            <iframe src="https://drive.google.com/file/d/1-qNE6kxMpzj8q9W-ga-H2jtsJl4NYonE/preview"></iframe>
+        </div>
+
+        <div class="certificate">
+            <h3>CCNA Security</h3>
+            <iframe src="https://drive.google.com/file/d/1TToS0A--4G0ENUECEYtNE_299kGKgHEZ/preview"></iframe>
+        </div>
+
+        <div class="certificate">
+            <h3>Cisco Entrepreneurship</h3>
+            <iframe src="https://drive.google.com/file/d/1TLQsB7bu_a4c69BGyTz2q6d13ZNmk21f/preview"></iframe>
+        </div>
+
+        <div class="certificate">
+            <h3>Cisco Introduction to Cyber Security</h3>
+            <iframe src="https://drive.google.com/file/d/1dSNtdx3MWkv48QHTrb4Bn77cy8-54OoF/preview"></iframe>
+        </div>
+
+        <div class="certificate">
+            <h3>Cisco Introduction to IoT</h3>
+            <iframe src="https://drive.google.com/file/d/1qkdrBo7ug9bT0MQw50g6_SbYOBJREIxR/preview"></iframe>
+        </div>
+
+        <div class="certificate">
+            <h3>Cisco IT Essentials PC Hardware and Software</h3>
+            <iframe src="https://drive.google.com/file/d/1X6pVM9_DVR07XKyQe99aN0g-AnJ37xES/preview"></iframe>
+        </div>
+
+        <div class="certificate">
+            <h3>First commendation from Cisco’s CEO for exceptional accomplishments in the IT Essentials course</h3>
+            <iframe src="https://drive.google.com/file/d/1ffMkZSxks4F4s8-yR5C0OwYnrUU2L7DR/preview"></iframe>
+        </div>
+
+        <div class="certificate">
+            <h3>Second commendation from Cisco’s CEO for exceptional accomplishments in the CCNA Security course</h3>
+            <iframe src="https://drive.google.com/file/d/1TJ20MAQgL0ENAvebwY3HgL1n_oRbU1Vb/preview"></iframe>
+        </div>
+
+        <div class="certificate">
+            <h3>Third commendation from Cisco’s CEO for exceptional accomplishments in the CCNA Routing and Switching course</h3>
+            <iframe src="https://drive.google.com/file/d/1oTz2bq16MQ5Jt5bYEnsJliqHFsG1vwR-/preview"></iframe>
+        </div>
+
+        <!-- إضافة قسم العضوية -->
+        <div class="certificate">
+            <h3>Saudi Council of Engineers Membership</h3>
+            <p>Membership Category: Engineering Technologist</p>
+            <p>Specialization: Network Engineering Technology</p>
+            <p>Membership No: 975819</p>
+            <iframe src="https://drive.google.com/file/d/1MZxugEcyvKftyLMoOUBHQokA4tnyWJzp/preview"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p> صنع بواسطة المهندس عبدالله محمد فردان</p>
+        <a href="https://www.linkedin.com/in/abdullahfardan" target="_blank" class="linkedin-icon">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://api.whatsapp.com/send/?phone=966558805075&text&type=phone_number&app_absent=0" target="_blank" class="whatsapp-icon">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+    </footer>
+</div>
+
+<script>
+function setLanguage(language) {
+    document.getElementById('language-selection').style.display = 'none';
+    if (language === 'ar') {
+        document.getElementById('content-ar').style.display = 'block';
+        document.getElementById('content-en').style.display = 'none';
+    } else {
+        document.getElementById('content-en').style.display = 'block';
+        document.getElementById('content-ar').style.display = 'none';
+    }
+}
+</script>
+
+</body>
+</html>
